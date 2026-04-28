@@ -26,8 +26,7 @@ static char *colors[][3] = {
 };
 
 static const char *const autostart[] = {
-	"feh", "--bg-scale", "/home/troy/Pictures/bg/bg.png", NULL,
-	"wal", "-R", NULL,
+	"wal", "-i", "/home/troy/Pictures/bg/disco.png", NULL,
 	"pipewire", NULL,
 	"wireplumber", NULL,
 	"dunst", NULL,
