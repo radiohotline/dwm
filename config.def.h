@@ -13,25 +13,23 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Hack Nerd Font Mono:pixelsize=14:antialias=true:autohint=true", "NotoColorEmoji:pixelsize=14:antialias=true:autohint=true" };
 static const char dmenufont[]       = "Hack Nerd Font Mono:pixelsize=14:antialias=true:autohint=true";
-static char normbgcolor[]           = "#222222";
-static char normbordercolor[]       = "#444444";
-static char normfgcolor[]           = "#bbbbbb";
-static char selfgcolor[]            = "#eeeeee";
-static char selbordercolor[]        = "#005577";
-static char selbgcolor[]            = "#005577";
+static char normbgcolor[]           = "#0c0a0d";
+static char normbordercolor[]       = "#7d7d82";
+static char normfgcolor[]           = "#444444";
+static char selfgcolor[]            = "#b4b3bb";
+static char selbordercolor[]        = "#b4b3bb";
+static char selbgcolor[]            = "#615358";
 static char *colors[][3] = {
        /*               fg           bg           border   */
        [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
        [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
 };
-/*#include "/home/troy/.cache/wal/colors-wal-dwm.h"*/
 
 static const char *const autostart[] = {
 	"wal", "-R", NULL,
-	"/home/troy/scripts/wal.sh", NULL,
-	"pipewire", NULL,
-	"wireplumber", NULL,
+	"dwmblocks", NULL,
 	"dunst", NULL,
+	"picom", NULL,
 	"/home/troy/scripts/sshfs.sh", NULL,
 	"nicotine", "-s", NULL,
 	NULL /* terminate */
