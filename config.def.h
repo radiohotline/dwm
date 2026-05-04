@@ -14,11 +14,11 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Hack Nerd Font Mono:pixelsize=14:antialias=true:autohint=true", "NotoColorEmoji:pixelsize=14:antialias=true:autohint=true" };
 static const char dmenufont[]       = "Hack Nerd Font Mono:pixelsize=14:antialias=true:autohint=true";
 static char normbgcolor[]           = "#0c0a0d";
-static char normbordercolor[]       = "#7d7d82";
-static char normfgcolor[]           = "#444444";
-static char selfgcolor[]            = "#b4b3bb";
-static char selbordercolor[]        = "#b4b3bb";
-static char selbgcolor[]            = "#615358";
+static char normbordercolor[]       = "#0c0a0d";
+static char normfgcolor[]           = "#6F504E";
+static char selfgcolor[]            = "#0c0a0d";
+static char selbordercolor[]        = "#6F504E";
+static char selbgcolor[]            = "#6F504E";
 static char *colors[][3] = {
        /*               fg           bg           border   */
        [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
@@ -30,6 +30,7 @@ static const char *const autostart[] = {
 	"dwmblocks", NULL,
 	"dunst", NULL,
 	"picom", NULL,
+	"/home/troy/scripts/wal.sh", NULL,
 	"/home/troy/scripts/sshfs.sh", NULL,
 	"nicotine", "-s", NULL,
 	NULL /* terminate */
