@@ -26,8 +26,9 @@ static char *colors[][3] = {
 };
 
 static const char *const autostart[] = {
+	"pipewire", NULL,
 	"wal", "-R", NULL,
-	"dwmblocks", NULL,
+	"slstatus", NULL,
 	"dunst", NULL,
 	"picom", NULL,
 	"/home/troy/scripts/wal.sh", NULL,
@@ -92,9 +93,14 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
+static const char *roficmd[] = {"rofi", "-show", "drun", NULL};
 static const char *termcmd[]  = { "st", "-e", "zsh", NULL };
 static const char *upbrightness[]   = { "xbacklight", "-inc", "10", NULL };
 static const char *downbrightness[] = { "xbacklight", "-dec", "10", NULL };
+static const char *screenshotcmd[] = { "flameshot", "gui", "--clipboard", NULL};
+static const char *upvol[] = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "5%+", NULL };
+static const char *downvol[] = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "5%-", NULL };
+static const char *mutevol[] = { "wpctl", "set-mute", "@DEFAULT_AUDIO_SINK@", "toggle", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -144,6 +150,10 @@ static const Key keys[] = {
 	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} },
 	{ 0,            XF86XK_MonBrightnessUp,    spawn,          {.v = upbrightness } },
 	{ 0,            XF86XK_MonBrightnessDown,  spawn,          {.v = downbrightness } },
+	{ 0,		XK_Print,		   spawn,	   {.v = screenshotcmd } },
+	{ 0,            XF86XK_AudioLowerVolume,   spawn,          {.v = downvol } },
+	{ 0,            XF86XK_AudioMute,          spawn,          {.v = mutevol } },
+	{ 0,            XF86XK_AudioRaiseVolume,   spawn,          {.v = upvol   } },
 };
 
 /* button definitions */
