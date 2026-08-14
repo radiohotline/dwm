@@ -11,29 +11,16 @@ static const unsigned int gappov    = 10;       /* vert outer gap between window
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Hack Nerd Font Mono:pixelsize=14:antialias=true:autohint=true", "NotoColorEmoji:pixelsize=14:antialias=true:autohint=true" };
-static const char dmenufont[]       = "Hack Nerd Font Mono:pixelsize=14:antialias=true:autohint=true";
-static char normbgcolor[]           = "#0c0a0d";
-static char normbordercolor[]       = "#0c0a0d";
-static char normfgcolor[]           = "#6F504E";
-static char selfgcolor[]            = "#0c0a0d";
-static char selbordercolor[]        = "#6F504E";
-static char selbgcolor[]            = "#6F504E";
-static char *colors[][3] = {
-       /*               fg           bg           border   */
-       [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
-       [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
-};
+static const char *fonts[]          = { "DejaVuSansM Nerd Font Mono:pixelsize=14:antialias=true:autohint=true", "NotoColorEmoji:pixelsize=14:antialias=true:autohint=true" };
+static const char dmenufont[]       = "DejaVuSansM Nerd Font Mono:pixelsize=14:antialias=true:autohint=true";
+#include "/home/troy/.cache/wal/colors-wal-dwm.h"
 
 static const char *const autostart[] = {
 	"pipewire", NULL,
+	"xautolock", "-time", "10", "-locker", "slock", NULL,
 	"wal", "-R", NULL,
 	"slstatus", NULL,
 	"dunst", NULL,
-	"picom", NULL,
-	"/home/troy/scripts/wal.sh", NULL,
-	"/home/troy/scripts/sshfs.sh", NULL,
-	"nicotine", "-s", NULL,
 	NULL /* terminate */
 };
 
