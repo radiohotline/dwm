@@ -8,19 +8,22 @@ static const unsigned int gappih    = 10;       /* horiz inner gap between windo
 static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
 static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
 static const unsigned int gappov    = 10;       /* vert outer gap between windows and screen edge */
-static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
+static       int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "DejaVuSansM Nerd Font Mono:pixelsize=14:antialias=true:autohint=true", "NotoColorEmoji:pixelsize=14:antialias=true:autohint=true" };
 static const char dmenufont[]       = "DejaVuSansM Nerd Font Mono:pixelsize=14:antialias=true:autohint=true";
-#include "/home/troy/.cache/wal/colors-wal-dwm.h"
+#include "colors-wal-dwm.h"
 
 static const char *const autostart[] = {
 	"pipewire", NULL,
+	"wireplumber", NULL,
 	"xautolock", "-time", "10", "-locker", "slock", NULL,
-	"wal", "-R", NULL,
 	"slstatus", NULL,
+	"wal", "-R", NULL,
+	"xrdb", "-merge", "~/.Xresources", NULL,
 	"dunst", NULL,
+	"feh", "--bg-fill", "/home/troy/Pictures/cats.jpg", NULL,
 	NULL /* terminate */
 };
 

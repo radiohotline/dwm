@@ -1,0 +1,13 @@
+static char normfgcolor[] = "#bfc1ac";
+static char normbgcolor[] = "#0d0f0e";
+static char normbordercolor[] = "#858778";
+
+static char selfgcolor[] = "#bfc1ac";
+static char selbgcolor[] = "#6D714F";
+static char selbordercolor[] = "#5b6349";
+
+static char *colors[][3]      = {
+    /*               fgcolor           bgcolor         bordercolor                         */
+    [SchemeNorm] = { normfgcolor,     normbgcolor,   normbordercolor }, // unfocused wins
+    [SchemeSel]  = { selfgcolor,      selbgcolor,    selbordercolor },  // the focused win
+};
