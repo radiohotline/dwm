@@ -4,10 +4,10 @@
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
-static const unsigned int gappih    = 10;       /* horiz inner gap between windows */
-static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
-static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov    = 10;       /* vert outer gap between windows and screen edge */
+static const unsigned int gappih    = 0;       /* horiz inner gap between windows */
+static const unsigned int gappiv    = 0;       /* vert inner gap between windows */
+static const unsigned int gappoh    = 0;       /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov    = 0;       /* vert outer gap between windows and screen edge */
 static       int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -18,10 +18,9 @@ static const char dmenufont[]       = "DejaVuSansM Nerd Font Mono:pixelsize=14:a
 static const char *const autostart[] = {
 	"pipewire", NULL,
 	"wireplumber", NULL,
+	"pipewire-pulse", NULL,
 	"xautolock", "-time", "10", "-locker", "slock", NULL,
 	"slstatus", NULL,
-	"wal", "-R", NULL,
-	"xrdb", "-merge", "~/.Xresources", NULL,
 	"dunst", NULL,
 	"feh", "--bg-fill", "/home/troy/Pictures/cats.jpg", NULL,
 	NULL /* terminate */
@@ -82,11 +81,12 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
+/* static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL }; */
+static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *roficmd[] = {"rofi", "-show", "drun", NULL};
 static const char *termcmd[]  = { "st", "-e", "zsh", NULL };
-static const char *upbrightness[]   = { "xbacklight", "-inc", "10", NULL };
-static const char *downbrightness[] = { "xbacklight", "-dec", "10", NULL };
+static const char *upbrightness[]   = { "blight", "inc", "10", NULL };
+static const char *downbrightness[] = { "blight", "dec", "10", NULL };
 static const char *screenshotcmd[] = { "flameshot", "gui", "--clipboard", NULL};
 static const char *upvol[] = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "5%+", NULL };
 static const char *downvol[] = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "5%-", NULL };
