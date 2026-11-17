@@ -20,6 +20,7 @@ static const char *const autostart[] = {
 	"slstatus", NULL,
 	"dunst", NULL,
 	"picom", NULL,
+	"feh", "--bg-fill", "/home/troy/Pictures/bg/disco.png", NULL,
 	"/home/troy/scripts/sshfs.sh", NULL,
 	"nicotine", "-s", NULL,
 	NULL /* terminate */
