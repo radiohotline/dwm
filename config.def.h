@@ -13,25 +13,13 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Hack:pixelsize=14:antialias=true:autohint=true", "NotoColorEmoji:pixelsize=14:antialias=true:autohint=true" };
 static const char dmenufont[]       = "Hack:pixelsize=14:antialias=true:autohint=true";
-static char normbgcolor[]           = "#0c0a0d";
-static char normbordercolor[]       = "#0c0a0d";
-static char normfgcolor[]           = "#6F504E";
-static char selfgcolor[]            = "#0c0a0d";
-static char selbordercolor[]        = "#6F504E";
-static char selbgcolor[]            = "#6F504E";
-static char *colors[][3] = {
-       /*               fg           bg           border   */
-       [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
-       [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
-};
+#include "/home/troy/.cache/wal/colors-wal-dwm.h"
 
 static const char *const autostart[] = {
 	"pipewire", NULL,
-	"wal", "-R", NULL,
 	"slstatus", NULL,
 	"dunst", NULL,
 	"picom", NULL,
-	"/home/troy/scripts/wal.sh", NULL,
 	"/home/troy/scripts/sshfs.sh", NULL,
 	"nicotine", "-s", NULL,
 	NULL /* terminate */
@@ -138,7 +126,6 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Left,   viewprev,       {0} },
 	{ MODKEY|ShiftMask,             XK_Right,  tagtonext,      {0} },
 	{ MODKEY|ShiftMask,             XK_Left,   tagtoprev,      {0} },
-	{ MODKEY,                       XK_F5,     xrdb,           {.v = NULL } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
