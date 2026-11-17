@@ -6,8 +6,8 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "DejaVuSansM Nerd Font Mono:pixelsize=14:antialias=true:autohint=true", "NotoColorEmoji:pixelsize=14:antialias=true:autohint=true" };
-static const char dmenufont[]       = "DejaVuSansM Nerd Font Mono:pixelsize=14:antialias=true:autohint=true";
+static const char *fonts[]          = { "DejaVu Sans Mono:pixelsize=14:antialias=true:autohint=true", "NotoColorEmoji:pixelsize=14:antialias=true:autohint=true" };
+static const char dmenufont[]       = "DejaVu Sans Mono:pixelsize=14:antialias=true:autohint=true";
 #include "colors-wal-dwm.h"
 
 static const char *const autostart[] = {
@@ -64,8 +64,8 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 /* static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL }; */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "st",  NULL };
-static const char *upbrightness[]   = { "blight", "inc", "10", NULL };
-static const char *downbrightness[] = { "blight", "dec", "10", NULL };
+static const char *upbrightness[]   = { "brightnessctl", "set", "+10%", NULL };
+static const char *downbrightness[] = { "brightnessctl", "set", "-10%", NULL };
 static const char *screenshotcmd[] = { "flameshot", "gui", "--clipboard", NULL};
 static const char *upvol[] = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "5%+", NULL };
 static const char *downvol[] = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "5%-", NULL };
